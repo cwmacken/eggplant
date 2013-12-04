@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :user do
     username "MyString"
     name "MyString"
+    type ""
     email "MyString"
     company "MyString"
-    model "MyString"
   end
 end
