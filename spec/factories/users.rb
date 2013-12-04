@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :user do
-    username "MyString"
-    name "MyString"
-    type ""
-    email "MyString"
-    company "MyString"
+    username "demandtest"
+    name "demandtest"
+    type "demand"
+    email "demandtest@gmail.com"
+    company "demandtest"
   end
 end

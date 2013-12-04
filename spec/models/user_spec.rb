@@ -1,5 +1,19 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "creating a user"
+
+	  it "is invald without a username" do
+	  	expect(User.username:nil)
+	  end
+
+	  it "is invalid without a name" do 
+	  end
+	  
+	  it "is invalid without a type" do 
+	  end
+
+	  it "is invalid without a valid email" do
+	  end 
+
 end
