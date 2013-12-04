@@ -5,11 +5,14 @@ gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'database_cleaner'
+group :development, :test do 
+    gem 'rspec-rails' 
+    gem 'factory_girl_rails'
+end
+
+group :test do 
+    gem 'capybara' 
+    gem 'guard-rspec' 
 end
 
 # Use SCSS for stylesheets
