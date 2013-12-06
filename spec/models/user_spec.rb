@@ -1,19 +1,17 @@
 require 'spec_helper'
 
 describe User do
+  before do 
+  	@userfail = User.create(username: nil, name: nil)
+  end
+
   context "creating a user"
-
-	  it "is invald without a username" do
-	  	expect(User.username:nil)
-	  end
-
-	  it "is invalid without a name" do 
-	  end
 	  
-	  it "is invalid without a type" do 
+	  it "will validate the presense of a username" do
+	 			expect(@userfail.username).to_not be_valid
 	  end
 
-	  it "is invalid without a valid email" do
-	  end 
-
+	  it "will validate the presense of a name" do
+	 			expect(@userfail.name).to_not be_valid
+	  end
 end
