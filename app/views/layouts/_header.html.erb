@@ -1,0 +1,12 @@
+<% if Userbin.user_logged_in? %>
+  <li>
+    <%= Userbin.current_user.email %>
+    <ul>
+      <li><%= link_to 'My Profile', account_path %></li>
+      <li><a href="#" class="ub-logout">Log out</a></li>
+    </ul>
+  </li>
+<% else %>
+  <li><a href="#contact" class="ub-login">Log in</a></li>
+  <li><a class="ub-signup">Sign up</a></li>
+<% end %>

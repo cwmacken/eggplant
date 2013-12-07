@@ -19,9 +19,13 @@ ActiveRecord::Schema.define(version: 20131204191920) do
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "image"
     t.string   "type"
     t.string   "email"
     t.string   "company"
+    t.string   "userbin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

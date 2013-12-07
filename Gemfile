@@ -5,6 +5,9 @@ gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'figaro'
+
 group :development, :test do 
     gem 'rspec-rails' 
     gem 'factory_girl_rails'
@@ -14,6 +17,8 @@ group :test do
     gem 'capybara' 
     gem 'guard-rspec' 
 end
+
+gem "userbin"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
