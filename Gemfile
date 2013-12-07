@@ -11,11 +11,10 @@ gem 'figaro'
 group :development, :test do 
     gem 'rspec-rails' 
     gem 'factory_girl_rails'
-end
-
-group :test do 
+    gem 'selenium-webdriver'
     gem 'capybara' 
     gem 'guard-rspec' 
+    gem 'database_cleaner'
 end
 
 gem "userbin"
