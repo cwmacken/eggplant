@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-	# validates :username, presence: true
-	#  validates :name, presence: true
+	has_many :campaigns
+	has_many :submissions
 end

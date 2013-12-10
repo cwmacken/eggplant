@@ -17,6 +17,9 @@ Eggplant::Application.routes.draw do
       resources :users
 
       get 'account' => 'account#index'
+
+      resources :campaigns
+      
   # Example resource route with options:
   #   resources :products do
   #     member do
