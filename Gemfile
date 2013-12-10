@@ -7,6 +7,8 @@ gem 'rails', '4.0.1'
 gem 'pg'
 
 gem 'figaro'
+gem 'compass'
+gem 'foundation-rails'
 
 group :development, :test do 
     gem 'rspec-rails' 

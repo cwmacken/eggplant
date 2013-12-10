@@ -1,0 +1,36 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">EGGPLANT</a></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if Userbin.user_logged_in? %>
+        <li>
+          <%= link_to 'My Profile', account_path %>
+        </li>
+        <li>
+          <a href="#" class="ub-logout">
+            Log out
+          </a>
+        </li>
+    </ul>
+  <% else %>
+    <li><a href="#contact" class="ub-login">Log in</a></li>
+    <li><a class="ub-signup">Sign up</a></li>
+  <% end %>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <% if Userbin.user_logged_in? %>
+      <li >
+          <a>Welcome <%= Userbin.current_user.email %></a>
+      </li> 
+      <% end %>
+    </ul>
+  </section>
+</nav>
