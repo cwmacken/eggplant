@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204191920) do
+ActiveRecord::Schema.define(version: 20131210001114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: true do |t|
+    t.string   "owner"
+    t.integer  "start"
+    t.integer  "ending"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "submissions", force: true do |t|
+    t.string   "submitter"
+    t.integer  "submitted"
+    t.string   "copy"
+    t.boolean  "winner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -22,9 +40,7 @@ ActiveRecord::Schema.define(version: 20131204191920) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "image"
-    t.string   "type"
     t.string   "email"
-    t.string   "company"
     t.string   "userbin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
