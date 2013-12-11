@@ -17,6 +17,8 @@ Eggplant::Application.routes.draw do
       resources :users
 
       get 'account' => 'account#index'
+      get 'account/:id/edit' => 'account#edit'
+      
 
       resources :campaigns
       

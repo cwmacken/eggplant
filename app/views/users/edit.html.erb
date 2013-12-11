@@ -1,1 +1,13 @@
-Edit
+<%= form_for @user do |user| %>
+
+<%= user.label :username %>
+<%= user.text_field :username %>
+
+<%= user.label :name %>
+<%= user.text_field :name %>
+
+<%= user.submit%>
+
+<%= link_to 'Delete', user_path(@user), method: :delete %>
+
+<% end %>
