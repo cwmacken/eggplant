@@ -3,15 +3,12 @@
     <% if Userbin.current_user.image %>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 thumbnail">
-          <%= image_tag Userbin.current_user.image %>
         </div>
       </div>
+    <% else %>
+    pooooooooooo
     <% end %>
     <h1>Welcome <%= Userbin.current_user.email %>!</h1>
-    <p class="lead">
-      Userbin takes care of sending pretty confirmation mails for you (check your inbox!).
-      <br>
-      There's a whole bunch of settings and features waiting for you in your Userbin dashboard. <a href="https://userbin.com/dashboard">Go check it out!</a></p>
-    <p>Psst. you can also try logging out from here and log in again just for kicks.</p>
+    <%= link_to 'Edit Profile', account_path %>
   </div>
 </div>

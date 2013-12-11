@@ -13,7 +13,7 @@ require 'spec_helper'
 
 
 feature "demand user creates an account", js:true do
-	context "sucess" do
+	context "success" do
 		scenario "creating an account" do
 			visit '/'
 
@@ -56,5 +56,6 @@ feature "demand user creates an account", js:true do
 		end
 	end  
 end
+
 
 

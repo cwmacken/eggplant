@@ -1,4 +1,4 @@
-Userbin.configure do |config|
+  Userbin.configure do |config|
   config.app_id = ENV["USERBIN_APP_ID"]
   config.api_secret = ENV["USERBIN_SECRET"]
 
