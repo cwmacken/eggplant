@@ -17,6 +17,7 @@ group :development, :test do
     gem 'capybara' 
     gem 'guard-rspec' 
     gem 'database_cleaner'
+    gem 'better_errors'
 end
 
 gem "userbin"

@@ -16,10 +16,17 @@ def edit
 end
 
 def create
-	@campaign = Campaign.new
+	@campaign = Campaign.new(campaign_params)
+	@campaign.save
 end
 
 def destroy
+end
+
+
+private
+def campaign_params
+      params.require(:campaign).permit(:description)
 end
 
 end
