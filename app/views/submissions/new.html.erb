@@ -1,8 +1,15 @@
-<%= form_for @submission do |i| %>
-	<%= i.label :copy %>
-	<%= i.text_field :copy %>
-	<%= i.hidden_field :cid, :value => params[:id]%>
+<div class="row">
+	<div class="small-12">
+		<h2>Submit Copy</h2>
+	</div>
+</div>
 
-	<%= i.submit %>
-
-<% end %>
+<div class="row">
+	<div class="small-8">
+		<%= form_for @submission do |i| %>
+			<%= i.text_field :content %>
+			<%= i.hidden_field :cid, :value => params[:id]%>
+			<%= i.submit %>
+		<% end %>
+	</div>
+</div>

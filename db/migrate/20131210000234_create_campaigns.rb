@@ -4,7 +4,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.string :owner
       t.integer :start
       t.integer :ending
-      t.string :description
+      t.text :description
 
       t.timestamps
     end

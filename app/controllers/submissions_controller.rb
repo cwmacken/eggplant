@@ -25,7 +25,7 @@ class SubmissionsController < ApplicationController
 
 	private
 	def submission_params
-		params.require(:submission).permit(:copy, :submitter, :winner)
+		params.require(:submission).permit(:content, :submitter, :winner)
 	end 
 end
 

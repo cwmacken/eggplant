@@ -1,9 +1,18 @@
-<%= @campaign.title %>
-<br>
-<%= @campaign.description %>
-
-
-<%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%>
+<div class="row">
+	<div class="small-12">
+		<h2><%= @campaign.title %></h2>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12">
+		<h4><%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%></h4>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12">
+		<h4><%= @campaign.description %></h4>	
+	</div>
+</div>
 
 	
 	

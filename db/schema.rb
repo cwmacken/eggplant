@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212012115) do
+ActiveRecord::Schema.define(version: 20131212043524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20131212012115) do
     t.string   "owner"
     t.integer  "start"
     t.integer  "ending"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 20131212012115) do
   create_table "submissions", force: true do |t|
     t.string   "submitter"
     t.integer  "submitted"
-    t.string   "copy"
     t.boolean  "winner"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "campaign_id"
+    t.text     "content"
   end
 
   add_index "submissions", ["campaign_id"], name: "index_submissions_on_campaign_id", using: :btree
