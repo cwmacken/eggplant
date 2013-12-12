@@ -1,13 +1,25 @@
 <%= form_for @user do |user| %>
+	<div class="row">
+  		<div class="small-3">
+    		<h3><%= user.label :username %></h3>
+  		</div>
+  		<div class="small-6">
+  			<%= user.text_field :username %>
+  		</div>
+	</div>
+	<div class="row">
+  		<div class="small-3">
+  					<h3><%= user.label :name %></h3>
+  		</div>
+  		<div class="small-6">
+  					<%= user.text_field :name %>
+  		</div>
+  </div>
+  <div class="row">
+  		<div class="small-12">     
+    	<h4><%= user.submit%></h4>
+  		</div>
+			</div>
+ 
+    <% end %> 
 
-<%= user.label :username %>
-<%= user.text_field :username %>
-
-<%= user.label :name %>
-<%= user.text_field :name %>
-
-<%= user.submit%>
-
-<%= link_to 'Delete', user_path(@user), method: :delete %>
-
-<% end %>

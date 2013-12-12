@@ -1,21 +1,19 @@
-<div class="container">
-  <div class="dashboard">
+<div class="row">
+  <div class="small-12">
     <% if Userbin.current_user.image %>
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 thumbnail">
-        </div>
-      </div>
+  </div>
+</div>
+      
     <% end %> 
-
-   <h3>USERNAME: <%= Userbin.current_user.username %></h3>
-    <h3>NAME:<%= Userbin.current_user.name %></h3>
-    <h3>EMAIL:<%= Userbin.current_user.email %></h3>
-    
-    <h1></h1>
-    
-  
-     
+<div class="row">
+  <div class="small-12">
+     <h4>USERNAME: <%= Userbin.current_user.username %></h4>
+      <h4>NAME:<%= Userbin.current_user.name %></h4>
+      <h4>EMAIL:<%= Userbin.current_user.email %></h4>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12">     
     <h4><%= link_to 'Edit Profile', edit_user_path(@user) %></h4>
-    
   </div>
 </div>

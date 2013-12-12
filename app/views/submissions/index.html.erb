@@ -1,1 +1,13 @@
-<%= link_to 'new', new_submission_path %>
+<% @submissions.each do |s| %>
+<div class="row">
+	<div class="small-12 columns">
+		<h3><%= s.title %></h3>
+			<%= s.campaign.title %>
+		
+		<h3><%= s.campaign_id %></h3>
+		<h4><%= link_to 'View', submission_path(s.id) %></h4>
+	</div>
+</div>
+
+<% end %>
+
