@@ -1,3 +1,9 @@
 <%= @campaign.title %>
 <br>
 <%= @campaign.description %>
+
+
+<%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%>
+
+	
+	

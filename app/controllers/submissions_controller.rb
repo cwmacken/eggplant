@@ -10,6 +10,7 @@ class SubmissionsController < ApplicationController
 	def create
 		@submission = Submission.new(submission_params)
 		@submission.submitter = Userbin.user
+		@submission.campaign = Campaign.find(params[:submission].permit(:cid)[:cid])
 		if @submission.save
 			redirect_to submission_url(@submission)
 		else
@@ -27,3 +28,5 @@ class SubmissionsController < ApplicationController
 		params.require(:submission).permit(:copy, :submitter, :winner)
 	end 
 end
+
+

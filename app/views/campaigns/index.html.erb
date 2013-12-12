@@ -1,5 +1,6 @@
 <% @campaigns.each do |c| %>
 <%= c.title %>
+<%= link_to 'View', campaign_path(c.id) %>
 <%= simple_format "\n" %>
 <% end %>
 

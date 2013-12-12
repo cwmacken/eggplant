@@ -1,6 +1,7 @@
 <%= form_for @submission do |i| %>
 	<%= i.label :copy %>
 	<%= i.text_field :copy %>
+	<%= i.hidden_field :cid, :value => params[:id]%>
 
 	<%= i.submit %>
 
