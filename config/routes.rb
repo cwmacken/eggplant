@@ -15,6 +15,8 @@ Eggplant::Application.routes.draw do
   #   resources :products
 
       resources :users
+      resources :submissions
+      
 
       get 'account' => 'account#index'
       get 'account/:id/edit' => 'account#edit'
