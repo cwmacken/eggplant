@@ -16,13 +16,10 @@
 </div>
 <div class="row">
 	<div class="small-12">
-		<h4><%= @submissions %></h4>
-			<!-- submission.each do \o\
-				If 
-					o.id = camapign.id 
-						submission.title
-				else
-				end -->
+
+			<% @submissions.each do |o| %>
+				<%= o.title %>
+				<% end %>
 	</div>
 </div>
 
