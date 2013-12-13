@@ -12,9 +12,11 @@
   </head>
 
   <body>
+
     <%= render 'layouts/nav' %>
-    <%= render 'layouts/landing' %>
+    
     <%= yield %>
+    <% javascript_include_tag "application" %>
     
       <footer class="row">
         <div class="large-12 columns"><hr>
@@ -35,19 +37,7 @@
  
             </div>
         </div>
-      </footer>
-    
- 
- 
- 
-  <script src="js/foundation.min.js"></script>
-  <script src="js/foundation/foundation.topbar.js"></script>
-
- <script>
-    $(document).foundation();
-  </script>
-    
-    
+      </footer> 
   </body>
 
 </html>
