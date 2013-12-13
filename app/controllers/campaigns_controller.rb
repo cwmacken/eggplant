@@ -7,6 +7,11 @@ end
 
 def show
 		@campaign = Campaign.find(params[:id])
+		@user = Userbin.current_user
+		if @user.id == @campaign.owner
+			@c = 1
+		else 
+		end
 		@submissions = @campaign.submissions
 end
 
@@ -16,7 +21,7 @@ end
 
 def edit
 	@campaign = Campaign.find(params[:id])
-	@campaign.owner = Userbin.user
+	@campaign.user = Userbin.user
 end
 
 def update
@@ -31,7 +36,7 @@ end
 def create
 	@userbin = Userbin.user.email
 	@campaign = Campaign.new(campaign_params)
-	@campaign.owner = Userbin.user
+	@campaign.user = Userbin.user
 	if @campaign.save
 		redirect_to campaign_url(@campaign)
 	else 

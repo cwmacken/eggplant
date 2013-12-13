@@ -16,10 +16,11 @@
 </div>
 <div class="row">
 	<div class="small-12">
-
-			<% @submissions.each do |o| %>
-				
+			<% if @user.campaigns.include?(@campaign) %>
+				<% @submissions.each do |o| %>
 					<%= o.title %>
+				<% end %>
+					<% else %>
 				<% end %>
 	</div>
 </div>
