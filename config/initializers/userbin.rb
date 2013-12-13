@@ -1,4 +1,4 @@
-  Userbin.configure do |config|
+Userbin.configure do |config|
   config.app_id = ENV["USERBIN_APP_ID"]
   config.api_secret = ENV["USERBIN_SECRET"]
 
@@ -10,10 +10,10 @@
   config.create_user = Proc.new { |profile|
     User.create! do |user|
       user.userbin_id = profile.id
-      user.name       = profile.name
+      user.name      = profile.name
       user.first_name = profile.first_name
       user.last_name  = profile.last_name
-      user.username   = profile.username
+      user.username  = profile.username
       user.email      = profile.email
       user.image      = profile.image
     end
