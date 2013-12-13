@@ -7,7 +7,10 @@
 <div class="row">
 	<div class="small-8">
 		<%= form_for @submission do |i| %>
-			<%= i.text_field :content %>
+			<%= i.label :title %>
+			<%= i.text_field :title %>
+			<%= i.label :content %>
+			<%= i.text_area :content, size: "100x800" %>
 			<%= i.hidden_field :cid, :value => params[:id]%>
 			<%= i.submit %>
 		<% end %>

@@ -20,12 +20,12 @@ def edit
 end
 
 def update
-@campaign = Campaign.find(params[:id])
-	if @campaign.update_attributes(campaign_params)
-  redirect_to campaign_url
-  else
-  render 'edit'
-  end
+	@campaign = Campaign.find(params[:id])
+		if @campaign.update_attributes(campaign_params)
+  			redirect_to campaign_url
+  		else
+  			render 'edit'
+  		end
 end
 
 def create
@@ -45,7 +45,7 @@ end
 
 private
 def campaign_params
-  params.require(:campaign).permit(:description, :owner, :title)
+  params.require(:campaign).permit(:description, :owner, :title, :price)
 end
 
 end
