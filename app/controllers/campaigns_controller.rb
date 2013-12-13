@@ -7,7 +7,7 @@ end
 
 def show
 		@campaign = Campaign.find(params[:id])
-		@submissions = Submission.all
+		@submissions = @campaign.submissions
 end
 
 def new
