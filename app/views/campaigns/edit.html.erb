@@ -1,0 +1,5 @@
+<%= form_for @campaign do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description, size: "100x200" %>
+  <%= f.submit "Create" %>
+<% end %>

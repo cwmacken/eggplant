@@ -1,11 +1,13 @@
 class CampaignsController < ApplicationController
 
+
 def index
 	@campaigns = Campaign.all
 end
 
 def show
-	@campaign = Campaign.find(params[:id])
+		@campaign = Campaign.find(params[:id])
+		@submissions = Submission.all
 end
 
 def new
@@ -13,6 +15,17 @@ def new
 end
 
 def edit
+	@campaign = Campaign.find(params[:id])
+	@campaign.owner = Userbin.user
+end
+
+def update
+@campaign = Campaign.find(params[:id])
+	if @campaign.update_attributes(campaign_params)
+  redirect_to campaign_url
+  else
+  render 'edit'
+  end
 end
 
 def create
