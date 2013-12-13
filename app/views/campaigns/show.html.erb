@@ -1,29 +1,41 @@
 <div class="row">
 	<div class="small-12">
-		<h2><%= @campaign.title %></h2>
-		<h3><%= @campaign.price %></h3>
+		<h2>Campaign Title:</h2>
+		<%= @campaign.title %>
+		<h2>Campaign Description:</h2>
+		<%= @campaign.description %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12">
+		<%= @campaign.price %>
 	</div>
 </div>
 <div class="row">
 	<div class="small-12">
-		<h4><%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%></h4>
+			<h2>Submitted Copy Titles:</h2>
+			<% @submissions.each do |o| %>
+					<%= o.title %>
+				<% end %>
 	</div>
 </div>
 <div class="row">
 	<div class="small-12">
-		<h4><%= @campaign.description %></h4>	
-	</div>
-</div>
-<div class="row">
-	<div class="small-12">
+
 			<% if @user.campaigns.include?(@campaign) %>
 				<% @submissions.each do |o| %>
 					<%= o.title %>
 				<% end %>
 					<% else %>
 				<% end %>
+
+			<h4><%= link_to 'edit campaign', edit_campaign_path(:id => @campaign.id)%></h4>
+
 	</div>
 </div>
-
-	
-	
+<div class="row">
+	<div class="small-12">
+		<h4><%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%></h4>
+	</div>
+</div>	
