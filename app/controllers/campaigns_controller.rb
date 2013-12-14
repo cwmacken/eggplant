@@ -45,6 +45,9 @@ def create
 end
 
 def destroy
+	Campaign.find(params[:id]).destroy
+	redirect_to campaigns_path
+	
 end
 
 
