@@ -36,6 +36,11 @@ class SubmissionsController < ApplicationController
 		@submission = Submission.find(params[:id])
 	end
 
+	def destroy
+		Submission.find(params[:id]).destroy
+		redirect_to submissions_path
+	end
+
 
 	private
 	def submission_params
