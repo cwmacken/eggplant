@@ -29,7 +29,9 @@
 </div>	
 <div class="row">
 	<div class="small-12">
+			<% if @user == @campaign.user %> 
 		<h4><%= link_to 'edit campaign', edit_campaign_path(:id => @campaign.id)%></h4>
+			<% end %>
 	</div>
 </div>	
 <div class="row">
