@@ -50,8 +50,13 @@ def create
 end
 
 def destroy
-	Campaign.find(params[:id]).destroy
-	redirect_to campaigns_path
+	@campaign = Campaign.find(params[:id])
+	if @campaign.user == Userbin.current_user
+		Campaign.find(params[:id]).destroy
+		redirect_to campaigns_path
+	else
+		redirect_to campaigns_path 
+	end
 	
 end
 
