@@ -36,8 +36,10 @@
 </div>	
 <div class="row">
 	<div class="small-12">
+	<% if @user == @campaign.user %> 
 	<%= button_to "Delete", {action:"destroy", id:@campaign},
 	       {method: :delete} %>
+	       <% end %>
 
 	</div>
 </div>	
