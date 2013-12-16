@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213231131) do
+ActiveRecord::Schema.define(version: 20131216202042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20131213231131) do
     t.datetime "updated_at"
     t.integer  "campaign_id"
     t.text     "content"
+    t.integer  "user_id"
   end
 
   add_index "submissions", ["campaign_id"], name: "index_submissions_on_campaign_id", using: :btree
