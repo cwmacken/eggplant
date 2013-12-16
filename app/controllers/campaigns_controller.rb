@@ -5,13 +5,14 @@ def index
 	@campaigns = Campaign.all
 end
 
+def my
+	@campaign = Campaign.find(params[:id])
+	@user = Userbin.current_user
+end
+
 def show
 		@campaign = Campaign.find(params[:id])
 		@user = Userbin.current_user
-		if @user.id == @campaign.owner
-			@c = 1
-		else 
-		end
 		@submissions = @campaign.submissions
 end
 

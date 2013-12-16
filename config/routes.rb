@@ -23,7 +23,7 @@ Eggplant::Application.routes.draw do
       
 
       resources :campaigns
-      
+      get 'my' => 'campaigns#my'      
   # Example resource route with options:
   #   resources :products do
   #     member do

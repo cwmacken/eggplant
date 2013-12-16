@@ -1,0 +1,14 @@
+<% @campaigns.each do |c| %>
+<div class="row">
+	<div class="small-3 columns">
+		<h3><%= c.title %></h3>
+		<h4><%= link_to 'View', campaign_path(c.id) %></h4>
+	</div>
+	<div class="small-9 columns">
+		<h3>$<%= c.price %></h3>
+	</div>
+		
+	</div>
+</div>
+
+<% end %>
