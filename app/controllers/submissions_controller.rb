@@ -45,6 +45,7 @@ class SubmissionsController < ApplicationController
 		else
 			redirect_to '/'
 		end
+		@campaigns = Userbin.current_user.campaigns
 	end
 
 	def destroy
