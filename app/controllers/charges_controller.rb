@@ -7,9 +7,22 @@ class ChargesController < ApplicationController
 	end
 
 def create
+  @charge = Charge.new(charges_params)
   # Amount in cents
-  @amount = Charge.find(params:id).charge
+  @amount = @charge.charge
+  if @charge.save
+    redirect_to charge_url(@charge)
+  else 
+    render :new
+    #notice
+  end
+end
 
+def show
+  @charge = Charge.find(params[:id])
+end
+
+def review
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',
     :card  => params[:stripeToken]
