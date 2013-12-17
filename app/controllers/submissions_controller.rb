@@ -4,6 +4,20 @@ class SubmissionsController < ApplicationController
 		
 	end
 
+	def win
+	
+	@submission = Submission.find(params[:id])
+	@campaign = @submission.campaign
+
+	@submission.winner = "yes"
+	@submission.campaign.status = 'finished'
+
+	@submission.save
+	
+	redirect_to '/account'
+
+	end
+
 	def new
 		@submission = Submission.new
 	end
@@ -12,7 +26,10 @@ class SubmissionsController < ApplicationController
 		@submission = Submission.new(submission_params)
 		@submission.user = Userbin.user
 		@submission.campaign = Campaign.find(params[:submission].permit(:cid)[:cid])
+		@submisison.winner = "no"
 		if @submission.save
+			
+			
 			redirect_to submission_url(@submission)
 		else
 			render:new
@@ -56,7 +73,7 @@ class SubmissionsController < ApplicationController
 
 	private
 	def submission_params
-		params.require(:submission).permit(:content, :submitter, :winner, :title)
+		params.require(:submission).permit(:content, :submitter, :winner, :title, :winner)
 	end 
 end
 

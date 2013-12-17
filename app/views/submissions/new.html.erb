@@ -12,6 +12,7 @@
 			<%= i.label :content %>
 			<%= i.text_area :content, size: "100x800" %>
 			<%= i.hidden_field :cid, :value => params[:id]%>
+			<%= i.hidden_field :winner, :value => "no"%>
 			<%= i.submit %>
 		<% end %>
 	</div>
