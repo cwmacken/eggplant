@@ -26,19 +26,18 @@ ActiveRecord::Schema.define(version: 20131217203107) do
     t.string   "title"
     t.integer  "price"
     t.integer  "user_id"
-    t.string   "status"
   end
 
   create_table "charges", force: true do |t|
-    t.string "user_id"
-    t.string "campaign_id"
-    t.float  "charge"
+    t.string  "user_id"
+    t.string  "campaign_id"
+    t.integer "charge"
   end
 
   create_table "submissions", force: true do |t|
     t.string   "submitter"
     t.integer  "submitted"
-    t.string   "winner"
+    t.boolean  "winner"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
