@@ -16,11 +16,11 @@
 </div>
 <div class="row">
 	<div class="small-12">
-		<%if  @campaign.status == "live" %>	
+		
 			<h2>Submissions</h2>
-		<% end %>
+		
 			
-		<%if  @campaign.status == "live" %>
+		
 			<% if @user.campaigns.include?(@campaign) %>
 
 
@@ -34,43 +34,33 @@
 				<% end %>
 					<% else %>
 				<% end %>
-		<% end %>
-		<%if  @campaign.status == "finished" %>
-			Winner:
-			<% if @user.campaigns.include?(@campaign) %>
-				
-					<% @submissions.each do |o| %>
-						<%= o.title %>
-					
-				<% end %>
-			<% end %>
-		<% end %>
-
+		
+		
 	</div>
 </div>
 <div class="row">
 	<div class="small-12">
-		<%if  @campaign.status == "live" %>
+		
 			<h4><%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%></h4>
-		<% end %>
+		
 	</div>
 </div>	
 <div class="row">
 	<div class="small-12">
-		<%if  @campaign.status == "live" %>
+		
 			<% if @user == @campaign.user %> 
 		<h4><%= link_to 'edit campaign', edit_campaign_path(:id => @campaign.id)%></h4>
 			<% end %>
-		<% end %>
+		
 	</div>
 </div>	
 <div class="row">
 	<div class="small-12">
-	<%if  @campaign.status == "live" %>
+	
 		<% if @user == @campaign.user %> 
 		<%= button_to "Delete", {action:"destroy", id:@campaign},
 	    	   {method: :delete} %>
 	       	<% end %>
-	<% end %>
+	
 	</div>
 </div>	

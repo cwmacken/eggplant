@@ -23,7 +23,7 @@ Eggplant::Application.routes.draw do
       
 
       resources :campaigns
-      post ":id/win" => 'submissions#win', :as => "win"
+      post "campaigns/:id/win" => 'submissions#win', :as => "win"
             
   # Example resource route with options:
   #   resources :products do
