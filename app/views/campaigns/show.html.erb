@@ -16,16 +16,17 @@
 	<div class="small-12">
 		<h2>Submissions</h2>
 			<% if @user.campaigns.include?(@campaign) %>
-				
-					<% @submissions.each do |o| %>
-						<h4>
-							<%= o.title %>
-						</h4>	
-					<% end %>
-						<% else %>
-					<% end %>
-				
-		
+
+				<% @submissions.each do |o| %>
+					<h2>Submission Title:</h2>
+					<%= o.title %>
+					<h2>Submission Content:</h2>
+					<%= o.content %>
+					<%= o.user.username %>
+				<% end %>
+					<% else %>
+				<% end %>
+
 	</div>
 </div>
 <div class="row">
