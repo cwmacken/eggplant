@@ -1,3 +1,67 @@
+ <%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"></script>
+<% end %>
+
+    <div id="container">
+		<h1>Create form using jQuery UI</h1>
+		<form action="" method="post" id="customtheme">
+			<p>
+				<label for="data-amount">Amount</label>
+				<input type="text" name="username" id="username" />
+			</p>
+			
+			<p>
+				<label for="password">Password</label>
+				<input type="text" name="password" id="password" />
+			</p>
+
+			<p>
+				<label for="email">Email</label>
+				<input type="text" name="email" id="email" />
+			</p>
+			
+			<p>
+				<label for="gender">Gender</label>
+				<select name="gender" id="gender">
+					<option value="">--select--</option>
+					<option value="male">male</option>
+					<option value="female">female</option>
+				</select>
+			</p>
+
+			<p>
+				<label for="date">Birth Date</label>
+				<input type="text" class="date" id="date" name="date" />
+			</p>
+			
+			<p>
+				<label for="active">Active</label>
+				<input type="radio" name="active" title="Active"/>Active
+				<input type="radio" name="active" title="InActive"/>InActive
+			</p>
+			
+			<p>
+				<label for="description" style="vertical-align: top;">Description</label>
+				<textarea name="description" id="description" cols="30" rows="10"></textarea>
+			</p>
+			
+			<p>
+				<input type="button" name="submit" value="Submit" id="submitbutton" onClick="alert('Submitted.');"/>
+			</p>
+		</form>
+	</div>
+
+
+
 <%= form_for @charge do |f| %>
 	<div class="row">
   		<div class="small-3">
