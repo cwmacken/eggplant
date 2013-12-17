@@ -21,6 +21,11 @@ class SubmissionsController < ApplicationController
 
 	def edit
 		@submission = Submission.find(params[:id])
+		if @submission.user == Userbin.current_user
+			render 'edit'
+		else
+			redirect_to '/'
+		end
 	end
 
 	def update
@@ -35,6 +40,11 @@ class SubmissionsController < ApplicationController
 	def show
 		@user = Userbin.current_user
 		@submission = Submission.find(params[:id])
+		if @user.submissions.include?(@submission)
+			render 'show'
+		else
+			redirect_to '/'
+		end
 	end
 
 	def destroy
