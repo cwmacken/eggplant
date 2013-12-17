@@ -1,12 +1,14 @@
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $100.00</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<%= form_for @charge do |f| %>
+	<div class="row">
+  		<div class="small-3">
+  			 <h4><%= f.label :charge%></h4>
+  		</div>
+  		<div class="small-6">
+  			<h4><%= f.text_field :charge %></h4>
+  		</div>
+	</div>
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="1000000"></script>
-<% end %>
+          data-amount="600"></script>
+    <% end %>
