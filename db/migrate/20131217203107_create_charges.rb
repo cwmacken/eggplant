@@ -3,7 +3,7 @@ class CreateCharges < ActiveRecord::Migration
     create_table :charges do |t|
       t.string :user_id
       t.string :campaign_id
-      t.integer :charge
+      t.integer :price
     end
   end
 end

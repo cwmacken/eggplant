@@ -44,7 +44,7 @@ def create
 	@campaign.user = Userbin.user
 	@campaign.status = "live"
 	if @campaign.save
-		redirect_to campaign_url(@campaign)
+		redirect_to controller: :charges, action: :new, :id => @campaign
 	else 
 		render :new
 	end
@@ -64,7 +64,7 @@ end
 
 private
 def campaign_params
-  params.require(:campaign).permit(:description, :owner, :title, :price)
+  params.require(:campaign).permit(:description, :owner, :title, :price, :status)
 end
 
 end
