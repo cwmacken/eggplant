@@ -20,12 +20,12 @@ Eggplant::Application.routes.draw do
 
       get 'account' => 'account#index'
       get 'account/:id/edit' => 'account#edit'
-      
+      patch '/charges/:id' => 'charges#create'
       resources :charges
       resources :campaigns
       get 'my' => 'campaigns#my'   
       post 'campaign/:id/win' => 'submissions#win', as:'win'
-      post '/charges' => 'charges#pay', as:'10'   
+       
   # Example resource route with options:
   #   resources :products do
   #     member do

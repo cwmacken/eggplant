@@ -12,13 +12,14 @@
   <article>
     <label class="amount">
       <span>Amount: $<%= @campaign.price %></span>
+      <!-- hidden value passing the id???? -->
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="2500"></script>
+          data-amount=<%= @campaign.price * 100 %> ></script>
 <% end %>
 	<div class="row">
   		<div class="small-3">

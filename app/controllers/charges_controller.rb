@@ -25,7 +25,7 @@ def create
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
-   
+  #not working perect
    #PUT A NOTICE IN HERE!!!!!!
 rescue Stripe::CardError => e
   flash[:error] = e.message
