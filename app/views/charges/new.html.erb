@@ -3,7 +3,7 @@
   <article>
     <label class="amount">
       <span>Amount: $<%= @campaign.price %></span>
-      <!-- hidden value passing the id???? -->
+    <%= @campaign.hidden_field :id, :value => params[:id]%>
     </label>
   </article>
 
