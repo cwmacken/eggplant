@@ -4,4 +4,5 @@ class AccountController < ApplicationController
 		@user = Userbin.current_user
 		@submissions = Userbin.current_user.submissions
 	end 
+
 end
