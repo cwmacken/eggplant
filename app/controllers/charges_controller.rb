@@ -6,12 +6,12 @@ class ChargesController < ApplicationController
 end
 
 def create
-  @campaign = Campaign.find(params[:id])
+  @campaign = Campaign.find(params[:campaign_id])
   
   
   #@campaign = Campaign.find(params[:id])
   # Amount in cents
-  @amount = @campaign.price
+  @amount = (@campaign.price * 100)
 
 
   customer = Stripe::Customer.create(
