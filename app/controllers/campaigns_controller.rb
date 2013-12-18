@@ -42,6 +42,7 @@ def create
 	@userbin = Userbin.user.email
 	@campaign = Campaign.new(campaign_params)
 	@campaign.user = Userbin.user
+	@campaign.status = "live"
 	if @campaign.save
 		redirect_to campaign_url(@campaign)
 	else 
