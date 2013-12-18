@@ -24,7 +24,8 @@ Eggplant::Application.routes.draw do
       resources :charges
       resources :campaigns
       get 'my' => 'campaigns#my'   
-      post 'campaign/:id/win' => 'submissions#win', as:'win'   
+      post 'campaign/:id/win' => 'submissions#win', as:'win'
+      post '/charges' => 'charges#pay', as:'10'   
   # Example resource route with options:
   #   resources :products do
   #     member do
