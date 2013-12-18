@@ -14,9 +14,10 @@
                 <%= @campaign.price %>
         </div>
 </div>
+ <% if @campaign.status == "live" %>
 <div class="row">
         <div class="small-12">
-                
+               
                         <h2>Submissions</h2>
                 
                         
@@ -34,6 +35,7 @@
                                 <% end %>
                                         <% else %>
                                 <% end %>
+                   
                 
                 
         </div>
@@ -64,3 +66,35 @@
         
         </div>
 </div>
+<% end %>
+<% if @campaign.status == "finished" %>
+	<div class="row">
+        <div class="small-12">
+               
+                        <h2>Submissions:</h2>
+                
+                        
+                
+                        <% if @user.campaigns.include?(@campaign) %>
+                        					
+
+                                <% @submissions.each do |o| %>
+                             								<% if o.winner == "yes" %>					
+
+                                        <h2>Submission Title:</h2>
+                                        <%= o.title %>
+                                        <h2>Submission Content:</h2>
+                                        <%= o.content %>
+                                				<% end %>
+
+
+                                <% end %>
+                             
+                       <% end %>
+                   
+                
+                
+        </div>
+</div>
+
+<% end %>
