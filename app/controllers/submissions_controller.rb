@@ -17,14 +17,16 @@ def win
     @submission.campaign.status = 'finished'
 
     if        @submission.save
-            redirect_to account_path
+        if @submission.campaign.save    
+        	redirect_to account_path
+        end
     else
 
     
             render:new
     end
 
-   end
+end
 	
 
 	def create

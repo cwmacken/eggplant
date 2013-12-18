@@ -13,7 +13,8 @@
 
  # Submission.create(submitter:'2',campaign_id:'1',title:'TEST SUBMISSION TITLE', content:' TEST SUBMISSION CONTENT')
 
-
+User.create(name:'Conor', email:'cwmacken@gmail.com', userbin_id:'vL1rz9mFZFDvGKw9nnBGtNXpQgZnQ9cr')					
+User.create(name:'Pikachu', email:'pikachu@gmail.com')
 User.create(name:'Pikachu', email:'pikachu@gmail.com')
 User.create(name:'Diglett', email:'diglett@gmail.com')
 User.create(name:'Mew', email:'mew@aol.com')
