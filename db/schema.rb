@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131217203107) do
     t.integer  "start"
     t.integer  "ending"
     t.text     "description"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20131217203107) do
   create_table "submissions", force: true do |t|
     t.string   "submitter"
     t.integer  "submitted"
-    t.boolean  "winner"
+    t.string   "winner"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"

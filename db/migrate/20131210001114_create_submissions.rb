@@ -3,7 +3,7 @@ class CreateSubmissions < ActiveRecord::Migration
     create_table :submissions do |t|
       t.string :submitter
       t.integer :submitted
-      t.boolean :winner
+      t.string :winner
       t.string :title
       t.timestamps
     end

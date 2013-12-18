@@ -5,6 +5,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.integer :start
       t.integer :ending
       t.text :description
+      t.string :status
 
       t.timestamps
     end
