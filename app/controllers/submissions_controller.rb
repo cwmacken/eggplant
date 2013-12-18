@@ -8,6 +8,25 @@ class SubmissionsController < ApplicationController
 		@submission = Submission.new
 	end
 
+
+def win
+    
+    @submission = Submission.find(params[:id])
+
+    @submission.winner = "yes"
+    @submission.campaign.status = 'finished'
+
+    if        @submission.save
+            redirect_to account_path
+    else
+
+    
+            render:new
+    end
+
+   end
+	
+
 	def create
 		@submission = Submission.new(submission_params)
 		@submission.user = Userbin.user
