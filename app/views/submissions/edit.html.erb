@@ -1,20 +1,21 @@
 <br>
 <div class="row">
-	<div class="small-1 column"></div>
-	<div class="small-11 column pushleft10">
-		<h2>Edit Submission</h2>
-	</div>
-</div>
-<div class="row">
-	<div class="small-1 column "></div>
-	<div class="small-11 column pushleft10">
-		<%= form_for @submission do |i| %>
+	<fieldset class="small-6 small-offset-3 column">
+		<legend>Edit Submission</legend>
+			<%= form_for @submission do |i| %>
 			<%= i.label :title %>
 			<%= i.text_field :title %>
 			<%= i.label :content %>
 			<%= i.text_area :content, size: "100x800" %>
 			<%= i.hidden_field :cid, :value => params[:id]%>
-			<%= i.submit %>
+			<%= i.submit  class: "button"   %>
 		<% end %>
+
+	</fieldset>
+</div>
+<div class="row">
+	<div class="small-1 column "></div>
+	<div class="small-11 column pushleft10">
+		
 	</div>
 </div>

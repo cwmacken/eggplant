@@ -1,52 +1,20 @@
 <br>
 <div class="row">
-    <fieldset>
-        <legend></legend>
-        
-
-    </fieldset>
-</div>    
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
-        <h1><%= @campaign.title %>   $<%= @campaign.price %></h1> 
+    <fieldset class="small-10 small-offset-1">
+        <legend><%= @campaign.title %></legend>
+        <h3>$<%= @campaign.price %></h3>
         <% if @user == @campaign.user %> 
-        	<% if @campaign.status == "Live" %> 
-    						<%= link_to 'Edit Campaign', edit_campaign_path(:id => @campaign.id), :class => "button"%>
-									<% end %>
-								<% end %>
-
-    </div>
-    
-</div>
-<br>
-<div class="row">    
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
-      
-            <p>This campaign is <span id="bigFont"><%= @campaign.status %></span></p>
-       
-    </div>
-</div>
-<div class="row">    
-				<div class="small-1 column"></div>
-    <div class="small-11 column pushleft">
-        <p><%= @campaign.description %></p>
-    </div>
-
-</div>
-<div class="row">
-    <div class="small-1 column"></div>
-    <div class="small-11 column">
-        <% if @campaign.status == "Live" %>
-        		<% if @user == @campaign.user %>
-            <h2>Submissions:</h2>
-          <% end %>
+            <% if @campaign.status == "Live" %> 
+                <%= link_to 'Edit Campaign', edit_campaign_path(:id => @campaign.id), :class => "button"%>
+            <% end %>
         <% end %>
-    </div>
-</div>
-<div class="row">
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
+        <p>This campaign is <span id="bigFont"><%= @campaign.status %></span></p>
+        <p><%= @campaign.description %></p>
+        <% if @campaign.status == "Live" %>
+            <% if @user == @campaign.user %>
+                    <h2>Submissions:</h2>
+            <% end %>
+        <% end %>
         <% if @campaign.status == "Live" %>        
             <% if @user.campaigns.include?(@campaign) %>
                 <% @submissions.each do |o| %>
@@ -59,24 +27,13 @@
                 <% end %>
              <% end %>
         <% end %>
-        
-    </div>
-</div>
-<div class="row">
-    <div class="small-1 column"></div>
-    <div class="small-11 column">
         <% if @campaign.status == "Finished" %>
             <h2>Winner:</h2>
         <% end %>
-    </div>
-</div>
-<div class="row">
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
         <% if @campaign.status == "Finished" %>        
             <% if @user.campaigns.include?(@campaign) %>
                 <% @submissions.each do |o| %>
-                		<% if o.winner == "yes" %>		
+                        <% if o.winner == "yes" %>      
                     <h4><%= o.title %></h4>
                     <br>
                     <h4>Content:</h4>
@@ -85,26 +42,14 @@
                    <% end %>
                 <% end %>
              <% end %>
-        <% end %>  
-    </div>
-</div>
-<div class="row">
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
-    		<% if @campaign.status == "Live" %>
+        <% end %> 
+        <% if @campaign.status == "Live" %>
+            <h3><%= link_to 'Submit Content', new_submission_path(:id => @campaign.id), :class => "button" %></h3>
+        <% end %>
+        <% if @user == @campaign.user %>
+            <% if @campaign.status == "Live" %> 
+                <%= button_to "Delete", {action:"destroy", id:@campaign}, :class => "button", method: :delete %>
+            <% end %>
+        <% end %>
 
-        <h3><%= link_to 'Submit Content', new_submission_path(:id => @campaign.id), :class => "button" %></h3>
-      <% end %>
-    </div>
-</div>
-<div class="row">
-				<div class="small-1 column"></div>
-    <div class="small-11 column">
-					<% if @user == @campaign.user %>
-						<% if @campaign.status == "Live" %> 
-    			<%= button_to "Delete", {action:"destroy", id:@campaign}, :class => "button", method: :delete %>
-						<% end %>
-					<% end %>
-    </div>
-</div>
-
+    </fieldset>

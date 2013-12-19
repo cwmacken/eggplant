@@ -1,32 +1,13 @@
 <div class="row">
-	<div class="small-1 column"></div>
-	<div class="small-11 column">
-		<h3>Campaign:  <%= @submission.campaign.title %></h3>	
-		<h3>submission:   <%= @submission.title %></h3>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="small-1 column"></div>	
-	<div class="small-11 column">
+	<fieldset class="small-10 small-offset-1 column">
+		<legend><%= @submission.title %></legend>	
+		<h3>Campaign: <%= @submission.campaign.title %>  </h3>
 		<h3>Content:</h3>
-	</div>
-</div>
-<div class="row">
-	<div class="small-1 column"></div>	
-	<div class="small-11 column" >
 		<h5><%= @submission.content %></h5>
-	</div>
-</div>
-<div class="row">
-	<div class="small-1 column"></div>	
-	<div class="small-11 column">
-			<% if @submission.campaign.status == "Live" %>		
+		<% if @submission.campaign.status == "Live" %>		
 						<h4><%= link_to 'Edit', edit_submission_path, :class => "button" %></h4>
 						<%= button_to "Delete", {action:"destroy", id:@submission}, :class => "button" ,method: :delete %>
 				    <h4><%= link_to 'Back', account_path, :class => "button" %></h4>
 			<% end %>
-		</div>
-		
+	</fieldset>
 </div>
-

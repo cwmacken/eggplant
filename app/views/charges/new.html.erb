@@ -1,18 +1,24 @@
-<div class="halfWayOver2">	 
-	<%= form_tag charges_path do %>
-	 <article>
-	  <label class="amount">
-	   <h1> $<%= @campaign.price %></h1>
-	    <%= hidden_field_tag :campaign_id, params[:id]%>
-	    	</label>
-	 </article>
-	 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<div class="row">
+	<fieldset class="small-2 small-offset-5">
+			<legend>Payment</legend>
+			<%= form_tag charges_path do %>
+				<h1>$<%= @campaign.price %><h1>
+
+				<%= hidden_field_tag :campaign_id, params[:id]%>
+				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 	          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 	          data-description="The Best Content"
 	          data-amount=<%= @campaign.price * 100 %> >
 	 </script>
-	<% end %>
+	 <% end %>
+	</fieldset>
 </div>
+
+
+
+
+
+
 
 
 
