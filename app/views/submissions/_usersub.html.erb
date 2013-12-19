@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="small-6 column">
-		My Submissions:
+		<h3>My Submissions:</h3>
 	</div>
 </div>
 <br>
@@ -10,10 +10,10 @@
 		<% @submissions.each do |c| %>
 			<ul>
 				<li>
-					<%= c.title %>
+					<h4><%= c.title %></h4>
 				</li>
 				<li>
-					<%= link_to 'View', submission_path(c.id) %>
+					<h5><%= link_to 'View', submission_path(c.id) %></h5>
 				</li>	
 			</ul>
 		<% end %>

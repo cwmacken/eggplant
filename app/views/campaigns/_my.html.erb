@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="small-1 columns"></div>
 	<div class="small-5 column">
-		My Live Campaigns:
+		<h3>My Live Campaigns:</h3>
 	</div>
 	<div class="small-6 column">
-		My Finished Campaigns:	
+		<h3>My Finished Campaigns:	</h3>
 	</div>
 </div>
 <br>
@@ -16,13 +16,13 @@
 			<% if c.status == "Live" %>
 				<ul>
 					<li>
-						<%= c.title %>		
+						<h5><%= c.title %>		</h5>
 					</li>
 					<li>
-						$<%= c.price %>		
+						<h5>$<%= c.price %>		</h5>
 					</li>
 					<li>
-						<%= link_to 'View', campaign_path(c.id) %>		
+						<h5><%= link_to 'View', campaign_path(c.id) %>		</h5>
 					</li>
 				</ul>
 				<br>
@@ -34,13 +34,13 @@
 			<% if c.status == "Finished" %>	
 				<ul>
 					<li>
-						<%= c.title %>
+						<h5><%= c.title %></h5>
 					</li>
 					<li>
-						$<%= c.price %>
+						<h5>$<%= c.price %></h5>
 					</li>
 					<li>
-						<%= link_to 'View', campaign_path(c.id) %>
+						<h5><%= link_to 'View', campaign_path(c.id) %></h5>
 					</li>
 				</ul>
 			<% end %>				
