@@ -45,7 +45,7 @@
             <% if @user.campaigns.include?(@campaign) %>
                 <% @submissions.each do |o| %>
                     <h4><%= o.title %></h4>
-                    <%= button_to "Winner", {:id => o.id , :controller => :submissions, action: "win" } %>
+                    <%= button_to "Winner", {:id => o.id , :controller => :submissions, action: "win"}, :class => "button" %>
                     <br>
                     <h4>Content:</h4>
                     <p class="pushleft"><%= o.content %></p>
