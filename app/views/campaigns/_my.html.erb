@@ -1,30 +1,48 @@
-<h2>My Live Campaigns:</h2>
-	<% @campaigns.each do |c| %>
-		<% if c.status == "live" %>
-			<div class="row">	
-				<div class="small-3 columns">
-					<h3><%= c.title %></h3>
-					<h4><%= link_to 'View', campaign_path(c.id) %></h4>
-				</div>
-				<div class="small-9 columns">
-					<h3>$<%= c.price %></h3>
-				</div>
-		<% end %>				
-			</div>
+<div class="row">
+	<div class="small-6 column">
+		My Live Campaigns:
+	</div>
+	<div class="small-6 column">
+		My Finished Campaigns:	
+	</div>
+</div>
+<br>
+<br>
+<div class="row">
+	<div class="small-6 column">
+		<% @campaigns.each do |c| %>
+			<% if c.status == "live" %>
+				<ul>
+					<li>
+						<%= c.title %>		
+					</li>
+					<li>
+						$<%= c.price %>		
+					</li>
+					<li>
+						<%= link_to 'View', campaign_path(c.id) %>		
+					</li>
+				</ul>
+				<br>
+			<% end %>						
 		<% end %>
-
-<h2>My Finished Campaigns:</h2>
-	<% @campaigns.each do |c| %>
-		<% if c.status == "finished" %>
-			<div class="row">	
-				<div class="small-3 columns">
-					<h3><%= c.title %></h3>
-					 <h4><%= link_to 'View', campaign_path(c.id) %></h4>
-				</div>
-				<div class="small-9 columns">
-					<h3>$<%= c.price %></h3>
-				</div>
-		<% end %>				
-			</div>
+	</div>
+	<div class="small-6 column">
+		<% @campaigns.each do |c| %>
+			<% if c.status == "finished" %>	
+				<ul>
+					<li>
+						<%= c.title %>
+					</li>
+					<li>
+						$<%= c.price %>
+					</li>
+					<li>
+						<%= link_to 'View', campaign_path(c.id) %>
+					</li>
+				</ul>
+			<% end %>				
 		<% end %>
+	</div>
+</div>	
 	

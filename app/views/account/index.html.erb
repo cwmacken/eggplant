@@ -1,19 +1,18 @@
 <div class="row">
-  <div class="small-12">
-    <% if Userbin.current_user.image %>
-  </div>
-</div>
-<% end %> 
-
-<div class="row">
-  <div class="large-4 columns">
+  <div class="large-6 columns">
     <div>USERNAME: <%= Userbin.current_user.username %></div>
     <div>NAME:<%= Userbin.current_user.name %></div>
+  </div>
+  <div class="large-6 columns">
     <div>EMAIL:<%= Userbin.current_user.email %></div>
     <div><%= link_to 'Edit Profile', edit_user_path(@user) %></div>
   </div>
-  <div class="large-4 columns">     
-    <div><%= render 'campaigns/my' %></div>
-    <div><%= render 'submissions/usersub' %></div>  
-  </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <%= render 'campaigns/my' %>
+  <%= render 'submissions/usersub' %></div>  
+  
