@@ -1,39 +1,16 @@
-
-  
-  
-  
-
-
-<%= form_for @campaign, url: {action: "create"}, html: {class: "new_campaign_form"} do |f| %>
-	<div class="row">
-  		<div class="small-3">
-  			 <h4><%= f.label :title%></h4>
-  		</div>
-  		<div class="small-6">
-  			<h4><%= f.text_field :title %></h4>
-  		</div>
-	</div>
-  <div class="row">
-      <div class="small-3">
-         <h4><%= f.label :price%></h4>
-      </div>
-      <div class="small-6">
-      <h4><%= f.text_field :price %></h4>
-        
-      </div>
-  </div>
-	<div class="row">
-  		<div class="small-3">
-  			<h4><%= f.label :description%></h4>
-  		</div>
-  		<div class="small-6">
-  			<h4><%= f.text_area :description, size: "100x200" %></h4>			
-  		</div>
-  </div>
-  <div class="row">
-  		<div class="small-12">     
-    	<h4><%= f.submit "Create" %></h4>
-  		</div>
-			</div>
- 
+<br>
+<div class="row">
+  <div class="small-1 column"></div>
+  <div class="small-7 column">
+    <%= form_for @campaign, url: {action: "create"}, html: {class: "new_campaign_form"} do |f| %>
+    	<p>Title</p>
+      <%= f.text_field :title %>
+      <p>Price (USD)</p>
+      <%= f.text_field :price %>
+      <p>Content</p>
+      <%= f.text_area :description, size: "100x200" %>			
+      <%= f.submit "Create" %>
     <% end %>
+  </div>
+  <div class="small-5 column"></div>
+</div>

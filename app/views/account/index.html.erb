@@ -1,17 +1,31 @@
+<br>
 <div class="row">
-  <div class="large-6 columns">
-    <div>USERNAME: <%= Userbin.current_user.username %></div>
-    <div>NAME:<%= Userbin.current_user.name %></div>
+  <div class="small-1 columns"></div>
+  <div class="small-5 columns">
+    Profile:  
   </div>
-  <div class="large-6 columns">
-    <div>EMAIL:<%= Userbin.current_user.email %></div>
-    <div><%= link_to 'Edit Profile', edit_user_path(@user) %></div>
-  </div>
+  <div class="small-6 columns"></div>
 </div>
 <br>
 <br>
-<br>
-<br>
+
+<div class="row">
+  <div class="small-1 columns"></div>
+    <div class="small-5 columns">
+      <ul>    
+        <li>
+          Name:<%= Userbin.current_user.name %>
+        </li>
+        <li>
+          Email:<%= Userbin.current_user.email %>
+        </li>
+        <li>
+          <%= link_to 'Edit Profile', edit_user_path(@user) %>
+        </li>
+      </ul>
+    </div>
+    <div class="small-6 columns"></div>
+</div>
 <br>
   <%= render 'campaigns/my' %>
   <%= render 'submissions/usersub' %></div>  

@@ -1,5 +1,14 @@
-<%= form_for @campaign do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :description, size: "100x200" %>
-  <%= f.submit "Save Changes" %>
-<% end %>
+<div class="row">
+ <div class="small-1 columns"></div>
+ 	<div class="small-5 columns">
+	  	<%= form_for @campaign do |f| %>
+	  		<br>
+	  		<%= f.label :title %>
+	  		<%= f.text_field :title %>
+	  		<%= f.label "Content" %>
+	  		<%= f.text_area :description, size: "100x200" %>
+	  		<%= f.submit "Save Changes" %>
+				<% end %>
+  	</div>
+  <div class="small-6 columns"></div>
+</div>
