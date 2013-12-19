@@ -2,7 +2,7 @@
 <div class="row">
   <div class="small-1 columns"></div>
   <div class="small-5 columns">
-    Profile:  
+    <h3>Profile:  </h3>
   </div>
   <div class="small-6 columns"></div>
 </div>
@@ -14,13 +14,13 @@
     <div class="small-5 columns">
       <ul>    
         <li>
-          Name:<%= Userbin.current_user.name %>
+          <h4>Name:<%= Userbin.current_user.name %></h4>
         </li>
         <li>
-          Email:<%= Userbin.current_user.email %>
+          <h4>Email:<%= Userbin.current_user.email %></h4>
         </li>
         <li>
-          <%= link_to 'Edit Profile', edit_user_path(@user) %>
+          <h4><%= link_to 'Edit Profile', edit_user_path(@user) %></h4>
         </li>
       </ul>
     </div>

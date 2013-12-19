@@ -1,9 +1,15 @@
 <br>
-
+<div class="row horiz">
+	<div class="small-0 medium-1 column"></div>
+	<div class="small-12 medium-11 column">	
+		<h2>Live Campaigns</h2>
+	</div>
+	</div>
 <div class="row horiz">
 	<div class="small-0 medium-1 column"></div>
 	<div class="small-12 medium-11 column">	
 		<% @campaigns.each do |c| %>
+		<% if c.status == "Live" %>
 			<ul>
 				<li>
 					<h4><%= c.title %></h4>
@@ -15,6 +21,7 @@
 					<h4><%= link_to 'View', campaign_path(c.id) %></h4>
 				</li>
 			</ul>
+			<% end %>
 		<% end %>
 	</div>
 <!-- 	<div class="small-4 column"></div>		 -->
