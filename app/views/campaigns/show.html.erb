@@ -1,98 +1,74 @@
-                <h2>Campaign Title:</h2>
-                <%= @campaign.title %>
-                <h2>Campaign Description:</h2>
-                <%= @campaign.description %>
-                    
-                <h3><%= @campaign.status %></h3>
-        
+<br>
+<div class="row">    
+				<div class="small-1 column"></div>
+    <div class="small-11 column">
+        <h1><%= @campaign.title %>   $<%= @campaign.price %></h1>
+    </div>
+    
+</div>
+<br>
+<div class="row">    
+				<div class="small-1 column"></div>
+    <div class="small-11 column">
+      
+            <p>This campaign is <span id="bigFont"><%= @campaign.status %></span></p>
+       
+    </div>
+</div>
+<div class="row">    
+				<div class="small-1 column"></div>
+    <div class="small-11 column pushleft">
+        <p><%= @campaign.description %></p>
+    </div>
 
+</div>
+<div class="row">
+    <div class="small-12 column">
+        <% if @campaign.status == "Live" %>
+            <h2>Submissions:</h2>
+        <% end %>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 column">
+        <% if @campaign.status == "Live" %>        
+            <% if @user.campaigns.include?(@campaign) %>
+                <% @submissions.each do |o| %>
+                    <h4><%= o.title %></h4>
+                    <%= button_to "Winner", {:id => o.id , :controller => :submissions, action: "win" } %>
+                    <br>
+                    <h4>Content:</h4>
+                    <p><%= o.content %></p>
+                    <br>
+                <% end %>
+             <% end %>
+        <% end %>
+        
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 column">
 
-        <div class="small-12">
-                <h2>Campaign Price:</h2>
-                <%= @campaign.price %>
-        
+        <%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%>
 
- <% if @campaign.status == "live" %>
-
-        <div class="small-12">
-               
-                        <h2>Submissions</h2>
-                
-                        
-                
-                        <% if @user.campaigns.include?(@campaign) %>
-
-
-                                <% @submissions.each do |o| %>
-                                        <h2>Submission Title:</h2>
-                                        <%= o.title %>
-                                        <h2>Submission Content:</h2>
-                                        <%= o.content %>
-                                        <%= button_to "Winner", {:id => o.id , :controller => :submissions, action: "win" } %>
-                                        
-                                <% end %>
-                                        <% else %>
-                                <% end %>
-                   
-                
-                
-        
-
-
-        
-                
-                        <h4><%= link_to 'submit copy', new_submission_path(:id => @campaign.id)%></h4>
-                
-        
-        
-
-        
-                
-                        <% if @user == @campaign.user %> 
-                <h4><%= link_to 'edit campaign', edit_campaign_path(:id => @campaign.id)%></h4>
-                        <% end %>
-                
-        
-        
-
-        
-        
-                <% if @user == @campaign.user %> 
-                <%= button_to "Delete", {action:"destroy", id:@campaign},
-                       {method: :delete} %>
-                       <% end %>
-        
-        
-
+<% if @user == @campaign.user %> 
+    <%= link_to 'edit campaign', edit_campaign_path(:id => @campaign.id)%>
 <% end %>
+
+<% if @user == @campaign.user %> 
+    <%= button_to "Delete", {action:"destroy", id:@campaign},{method: :delete} %>
+<% end %>
+
 <% if @campaign.status == "finished" %>
-	
-        
-               
-                        <h2>Submissions:</h2>
-                
-                        
-                
-                        <% if @user.campaigns.include?(@campaign) %>
-                        					
-
-                                <% @submissions.each do |o| %>
-                             								<% if o.winner == "yes" %>					
-
-                                        <h2>Submission Title:</h2>
-                                        <%= o.title %>
-                                        <h2>Submission Content:</h2>
-                                        <%= o.content %>
-                                				<% end %>
-
-
-                                <% end %>
-                             
-                       <% end %>
-                   
-                
-                
-        
-
-
+Submissions:
+<% if @user.campaigns.include?(@campaign) %>
+<% @submissions.each do |o| %>
+<% if o.winner == "yes" %>					
+Submission Title:
+<%= o.title %>
+Submission Content:
+<%= o.content %>
+<% end %>
+<% end %>
+<% end %>
 <% end %>

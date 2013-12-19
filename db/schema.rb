@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131217203107) do
   create_table "charges", force: true do |t|
     t.string  "user_id"
     t.string  "campaign_id"
-    t.integer "charge"
+    t.integer "price"
   end
 
   create_table "submissions", force: true do |t|

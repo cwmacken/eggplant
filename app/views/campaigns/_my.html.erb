@@ -13,7 +13,7 @@
 	<div class="small-1 columns"></div>
 	<div class="small-5 column">
 		<% @campaigns.each do |c| %>
-			<% if c.status == "live" %>
+			<% if c.status == "Live" %>
 				<ul>
 					<li>
 						<%= c.title %>		
@@ -31,7 +31,7 @@
 	</div>
 	<div class="small-6 column">
 		<% @campaigns.each do |c| %>
-			<% if c.status == "finished" %>	
+			<% if c.status == "Finished" %>	
 				<ul>
 					<li>
 						<%= c.title %>

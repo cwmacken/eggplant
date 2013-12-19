@@ -14,7 +14,7 @@ def win
     @submission = Submission.find(params[:id])
 
     @submission.winner = "yes"
-    @submission.campaign.status = 'finished'
+    @submission.campaign.status = 'Finished'
 
     if        @submission.save
         if @submission.campaign.save    

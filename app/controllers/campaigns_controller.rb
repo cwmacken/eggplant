@@ -42,7 +42,7 @@ def create
 	@userbin = Userbin.user.email
 	@campaign = Campaign.new(campaign_params)
 	@campaign.user = Userbin.user
-	@campaign.status = "live"
+	@campaign.status = "Live"
 	if @campaign.save
 		redirect_to controller: :charges, action: :new, :id => @campaign
 	else 
