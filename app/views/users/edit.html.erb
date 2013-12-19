@@ -1,10 +1,10 @@
 <div class="row">
  <div class="small-1 columns"></div>
- 	<div class="small-5 columns">
+ 	<div class="small-11 columns">
  		<%= form_for @user do |user| %>
   		<h3><%= user.label :name %></h3>
   		<%= user.text_field :name %>
-  		<h4><%= user.submit%></h4>
+  		<h4><%= user.submit class: "button" %></h4>
   	<% end %>
   </div>
 </div>

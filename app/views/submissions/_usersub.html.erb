@@ -13,7 +13,7 @@
 					<h4><%= c.title %></h4>
 				</li>
 				<li>
-					<h5><%= link_to 'View', submission_path(c.id) %></h5>
+					<h5><%= link_to 'View', submission_path(c.id), :class => "button"  %></h5>
 				</li>	
 			</ul>
 		<% end %>

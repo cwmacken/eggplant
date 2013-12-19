@@ -18,7 +18,7 @@
 					<h4>$<%= c.price %></h4>
 				</li>
 				<li>
-					<h4><%= link_to 'View', campaign_path(c.id) %></h4>
+					<h4><%= link_to 'View', campaign_path(c.id), :class => "button widen"  %></h4>
 				</li>
 			</ul>
 			<% end %>

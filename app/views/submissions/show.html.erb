@@ -22,10 +22,9 @@
 	<div class="small-1 column"></div>	
 	<div class="small-11 column">
 			<% if @submission.campaign.status == "Live" %>		
-						<h4><%= link_to 'Edit', edit_submission_path%></h4>
-						<%= button_to "Delete", {action:"destroy", id:@submission},
-				      {method: :delete} %>
-				    <h4><%= link_to 'Back', account_path%></h4>
+						<h4><%= link_to 'Edit', edit_submission_path, :class => "button" %></h4>
+						<%= button_to "Delete", {action:"destroy", id:@submission}, :class => "button" ,method: :delete %>
+				    <h4><%= link_to 'Back', account_path, :class => "button" %></h4>
 			<% end %>
 		</div>
 		

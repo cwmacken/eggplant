@@ -5,7 +5,7 @@
         <h1><%= @campaign.title %>   $<%= @campaign.price %></h1> 
         <% if @user == @campaign.user %> 
         	<% if @campaign.status == "Live" %> 
-    						<%= link_to 'Edit Campaign', edit_campaign_path(:id => @campaign.id)%>
+    						<%= link_to 'Edit Campaign', edit_campaign_path(:id => @campaign.id), :class => "button"%>
 									<% end %>
 								<% end %>
 
@@ -87,7 +87,7 @@
     <div class="small-11 column">
     		<% if @campaign.status == "Live" %>
 
-        <h3><%= link_to 'Submit Content', new_submission_path(:id => @campaign.id)%></h3>
+        <h3><%= link_to 'Submit Content', new_submission_path(:id => @campaign.id), :class => "button" %></h3>
       <% end %>
     </div>
 </div>
@@ -96,7 +96,7 @@
     <div class="small-11 column">
 					<% if @user == @campaign.user %>
 						<% if @campaign.status == "Live" %> 
-    			<%= button_to "Delete", {action:"destroy", id:@campaign},{method: :delete} %>
+    			<%= button_to "Delete", {action:"destroy", id:@campaign}, :class => "button", method: :delete %>
 						<% end %>
 					<% end %>
     </div>
