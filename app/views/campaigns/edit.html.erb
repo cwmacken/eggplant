@@ -1,6 +1,7 @@
 <div class="row">
- <div class="small-1 columns"></div>
- 	<div class="small-5 columns">
+
+ 	<fieldset class="small-6 small-offset-3 columns">
+	  	<legend>Edit</legend>
 	  	<%= form_for @campaign do |f| %>
 	  		<br>
 	  		<%= f.label :title %>
@@ -9,6 +10,6 @@
 	  		<%= f.text_area :description, size: "100x200" %>
 	  		<%= f.submit "Save Changes", :class => "button" %>
 				<% end %>
-  	</div>
+  	</fieldset>
   <div class="small-6 columns"></div>
 </div>

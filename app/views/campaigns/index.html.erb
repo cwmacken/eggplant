@@ -1,30 +1,24 @@
 <br>
+		
+	
 <div class="row horiz">
-	<div class="small-0 medium-1 column"></div>
-	<div class="small-12 medium-11 column">	
-		<h2>Live Campaigns</h2>
-	</div>
-	</div>
-<div class="row horiz">
-	<div class="small-0 medium-1 column"></div>
-	<div class="small-12 medium-11 column">	
-		<% @campaigns.each do |c| %>
-		<% if c.status == "Live" %>
-			<ul>
-				<li>
-					<h4><%= c.title %></h4>
-				</li>
-				<li>
-					<h4>$<%= c.price %></h4>
-				</li>
-				<li>
-					<h4><%= link_to 'View', campaign_path(c.id), :class => "button widen"  %></h4>
-				</li>
-			</ul>
+	<fieldset class="small-10 small-offset-1 column">	
+		<legend>Live Campaigns</legend>
+		<ul class=" large-block-grid-3 mediumn-block-grid-3 large-block-grid-3">
+			<% @campaigns.each do |c| %>
+				<% if c.status == "Live" %>	
+					<li>
+						<fieldset>
+								<legend><%= c.title %></legend>	
+								<%= link_to 'View', campaign_path(c.id), :class => "button"  %>
+								
+								<h4>$<%= c.price %></h4>
+						</fieldset>
+					</li>
+				<% end %>
 			<% end %>
-		<% end %>
-	</div>
-<!-- 	<div class="small-4 column"></div>		 -->
+		</ul>		
+	</fieldset>
 </div>
 
 

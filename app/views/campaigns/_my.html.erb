@@ -1,17 +1,6 @@
 <div class="row">
-	<div class="small-1 columns"></div>
-	<div class="small-5 column">
-		<h3>My Live Campaigns:</h3>
-	</div>
-	<div class="small-6 column">
-		<h3>My Finished Campaigns:	</h3>
-	</div>
-</div>
-<br>
-<br>
-<div class="row">
-	<div class="small-1 columns"></div>
-	<div class="small-5 column">
+	<fieldset class="small-4 small-offset-1 column">
+	<legend>My Live Campaigns</legend>
 		<% @campaigns.each do |c| %>
 			<% if c.status == "Live" %>
 				<ul>
@@ -28,8 +17,10 @@
 				<br>
 			<% end %>						
 		<% end %>
-	</div>
-	<div class="small-6 column">
+	</fieldset>
+
+	<fieldset class="small-4 small-pull-1 column">
+		<legend>My Finished Campaigns</legend>
 		<% @campaigns.each do |c| %>
 			<% if c.status == "Finished" %>	
 				<ul>
@@ -45,6 +36,6 @@
 				</ul>
 			<% end %>				
 		<% end %>
-	</div>
+	</fieldset>
 </div>	
 	
