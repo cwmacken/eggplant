@@ -1,25 +1,10 @@
-<%= form_for @user do |user| %>
-	<div class="row">
-  		<div class="small-3">
-    		<h3><%= user.label :username %></h3>
-  		</div>
-  		<div class="small-6">
-  			<%= user.text_field :username %>
-  		</div>
-	</div>
-	<div class="row">
-  		<div class="small-3">
-  					<h3><%= user.label :name %></h3>
-  		</div>
-  		<div class="small-6">
-  					<%= user.text_field :name %>
-  		</div>
+<div class="row">
+ <div class="small-1 columns"></div>
+ 	<div class="small-5 columns">
+ 		<%= form_for @user do |user| %>
+  		<h3><%= user.label :name %></h3>
+  		<%= user.text_field :name %>
+  		<h4><%= user.submit%></h4>
+  	<% end %>
   </div>
-  <div class="row">
-  		<div class="small-12">     
-    	<h4><%= user.submit%></h4>
-  		</div>
-			</div>
- 
-    <% end %> 
-
+</div>
