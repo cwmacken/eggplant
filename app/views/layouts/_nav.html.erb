@@ -27,14 +27,12 @@
           <%= link_to ' New Campaign', new_campaign_path %>
         </li>
         <li>
-          <a href="#" class="ub-logout">
-            Log out
-          </a>
+          <a rel="logout">Log out</a>
         </li>
     </ul>
   <% else %>
-    <li><a href="#" class="ub-login">Log in</a></li>
-    <li><a class= "ub-signup">Sign up</a></li>
+    <li><a rel="login">Log in</a></li>
+    <li><a rel="signup">Sign up</a></li>
   <% end %>
     </ul>
 
